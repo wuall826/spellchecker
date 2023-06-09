@@ -1,6 +1,6 @@
 ## **Setup**
 
-install the necessary Python packages using pip:
+Install the necessary Python packages using pip:
 
 `pip install flask Werkzeug python-docx openpyxl`
 
