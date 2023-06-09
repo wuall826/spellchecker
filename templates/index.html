@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spell Checker</title>
+    <link rel="stylesheet" href="/static/styles/style.css">
+    <style>
+        .container {
+            max-width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Spell Checker</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <div class="column left">
+                    <div class="half">
+                        <h2 class="text-heading">Text</h2>
+                        <p class="description">accepts .docx, .txt and .xlsx files<p>
+                        <div>
+                            <input type="file" name="text" accept=".txt,.docx,.xlsx" required>
+                        </div>
+                    </div>
+                    <div class="half">
+                        <h2>Dictionary</h2>
+                        <p class="description">accepts .docx, .txt and .xlsx files<p>
+                        <div>
+                            <input type="file" name="dictionary" accept=".txt,.docx,.xlsx" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column right">
+                    <h2 class="misspelled-words-heading">Misspelled Words</h2>
+                    <ul>
+                        {% for word in misspelled_words %}
+                            <li>{{ word }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+                <div class="spacer"></div>
+                <input type="submit" value="Check Spelling">
+
+        </form>
+    </div>
+</body>
+</html>
